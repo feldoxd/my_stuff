@@ -41,7 +41,7 @@ int main()
     }
  // you like bread 
     cout << "Shutting down program in few seconds.";
-    Sleep(5000);
+    Sleep(3000);
     return 0;
 }
 
