@@ -2,7 +2,7 @@
 #include <iostream>
 #include <classes.h>
 #include <windows.h>
-
+#include <conio.h>
 
 using namespace std;
 
@@ -38,8 +38,8 @@ int main()
         break;
     }
  // you like bread 
-    cout << "Shutting down program in few seconds.";
-    Sleep(3000);
+    cout << "Press any key to continue...";
+    _getch();
     return 0;
 }
 
