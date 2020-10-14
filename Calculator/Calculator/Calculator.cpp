@@ -1,4 +1,4 @@
-//version 1.1
+//version 1.2
 #include <iostream>
 #include <classes.h>
 #include <windows.h>
@@ -15,7 +15,7 @@ int main()
 	cout << "Enter numbers: ";
 	cin >> numbs.num1 >> numbs.num2;
 	cout << "Your entered numbers : " << numbs.num1 << " and " << numbs.num2 << "\n";
-    cout << "Enter operator +, -, * or /: \n";
+    cout << "Enter operator: +, -, * or /: \n";
     cin >> op;
     switch (op)
     {
