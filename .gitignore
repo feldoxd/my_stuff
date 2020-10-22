@@ -30,9 +30,9 @@ Debug/
 Debug_*/
 *.tlog/
 UpgradeLog*.htm
-
 *.vcxproj
 *filters
 *.iobj
 *.ipdb
 *.pdb
+*.exe
