@@ -7,6 +7,7 @@
 #include <windows.h>
 #include <conio.h>
 #include <tchar.h>
+#include <math.h>
 
 //this will wait
 void IniGui() {
