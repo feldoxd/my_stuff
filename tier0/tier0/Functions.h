@@ -18,7 +18,7 @@ public:
 
 int Void() {
 	delX del;
-	if (del.delA != del.delB) {
+	if (del.delA == del.delB) {
 		del.delA = "";
 	}
 	return 0;
