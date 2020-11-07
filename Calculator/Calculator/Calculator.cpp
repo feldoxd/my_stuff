@@ -1,6 +1,5 @@
 //version 1.5
-//My custom header files
-#include <classes.h>
+#include <Calculator.h>
 #include <Functions.h>
 
 #include <iostream>
@@ -9,54 +8,55 @@
 #include <tchar.h>
 #include <math.h>
 
-//this will wait
-void IniGui() {
-    std::cout << "fish" << "\n";
-    getInput();
+double num1, num2;
+
+void calcGui() {
+    
+
 }
-//still learning c++ soooooo...........
+
 void calcNogui() {
     SetConsoleTitle(_T("Simple calculator"));
-    pl numbs;
     char op;
     std::cout << "Enter numbers: ";
-    std::cin >> numbs.num1 >> numbs.num2;
-    std::cout << "Your entered numbers : " << numbs.num1 << " and " << numbs.num2 << "\n";
+    std::cin >> num1 >> num2;
+    std::cout << "Your entered numbers : " << num1 << " and " << num2 << "\n";
     std::cout << "Enter operator: +, -, * or /: \n";
     std::cin >> op;
     switch (op)
     {
     case '+':
-        std::cout << numbs.num1 + numbs.num2 << "\n";
+        std::cout << num1 + num2 << "\n";
         break;
 
     case '-':
-        std::cout << numbs.num1 - numbs.num2 << "\n";
+        std::cout << num1 - num2 << "\n";
         break;
 
     case '*':
-        std::cout << numbs.num1 * numbs.num2 << "\n";
+        std::cout << num1 * num2 << "\n";
         break;
 
     case '/':
-        std::cout << numbs.num1 / numbs.num2 << "\n";
+        std::cout << num1 / num2 << "\n";
         break;
 
     default:
         std::cout << "Error! operator is not correct" << "\n";
         break;
     }
-    getInput();
+    Pause();
 }
 
 int main()
 {
-    bool guiEnable = false;
+    bool guiEnable = true;
 
-    if (guiEnable == true){
-        IniGui();
+    if (guiEnable){
+        calcGui();
     }
-    else {
+    else
+    {
         calcNogui();
     }
     return 0;
