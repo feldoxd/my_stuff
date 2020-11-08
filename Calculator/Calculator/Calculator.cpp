@@ -1,6 +1,6 @@
 //version 1.5
 #include <Calculator.h>
-#include <Functions.h>
+#include <tier0.h>
 
 #include <iostream>
 #include <windows.h>
@@ -50,7 +50,7 @@ void calcNogui() {
 
 int main()
 {
-    bool guiEnable = true;
+    bool guiEnable = false;
 
     if (guiEnable){
         calcGui();
