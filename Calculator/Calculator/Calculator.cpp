@@ -10,7 +10,6 @@
 double num1, num2;
 
 void calcGui() {
-    
 
 }
 
