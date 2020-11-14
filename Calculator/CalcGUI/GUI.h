@@ -8,6 +8,10 @@ public:
 	GUI();
 	~GUI();
 public:
+	wxButton* m_btnplus = nullptr;
+	wxButton* m_btnminus = nullptr;
+	wxButton* m_btnkrat = nullptr;
+	wxButton* m_btndeleno = nullptr;
 	wxButton* m_btn1 = nullptr;
 	wxButton* m_btn2 = nullptr;
 	wxButton* m_btn3 = nullptr;
