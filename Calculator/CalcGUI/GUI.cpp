@@ -3,10 +3,13 @@
 int sizeY = 80;
 int sizeX = 30;
 int pointY = 80;
-int pointX = 100;
 
-GUI::GUI() : wxFrame(nullptr, wxID_ANY, "Calculator", wxPoint(80, 50), wxSize(300, 400))
+GUI::GUI() : wxFrame(nullptr, wxID_ANY, "Calculator", wxPoint(80, 50), wxSize(300, 500))
 {
+	m_btnplus = new wxButton(this, 11, "+", wxPoint(10, pointY + 350), wxSize(40, 30));
+	m_btnminus = new wxButton(this, 12, "-", wxPoint(50, pointY + 350), wxSize(40, 30));
+	m_btnkrat = new wxButton(this, 13, "*", wxPoint(90, pointY + 350), wxSize(40, 30));
+	m_btndeleno = new wxButton(this, 14, "/", wxPoint(140, pointY + 350), wxSize(40, 30));
 	m_list0 = new wxListBox(this, 10, wxPoint(20, 10), wxSize(240, 50));
 	m_btn1 = new wxButton(this, 1, "1", wxPoint(20, pointY), wxSize(sizeY, sizeX));
 	m_btn2 = new wxButton(this, 2, "2", wxPoint(100, pointY), wxSize(sizeY, sizeX));
@@ -22,6 +25,11 @@ GUI::GUI() : wxFrame(nullptr, wxID_ANY, "Calculator", wxPoint(80, 50), wxSize(30
 
 GUI::~GUI()
 {
+	delete[]m_btnplus;
+	delete[]m_btnminus;
+	delete[]m_btnkrat;
+	delete[]m_btndeleno;
+	delete[]m_list0;
 	delete[]m_btn1;
 	delete[]m_btn2;
 	delete[]m_btn3;
