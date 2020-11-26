@@ -5,9 +5,6 @@
 #include <tchar.h>
 #include <conio.h>
 #include "tier0.h"
-//neni potreba zatim
-void functions_init(){
-}
 //pausne kdyz pouzito
 int Pause() {
     std::cout << "Press any key to continue...";

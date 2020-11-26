@@ -1,0 +1,20 @@
+- randomness - nauceno snad dx
+- references - zapomnel sad
+- heap allocation
+- RAII in general (including smart pointers)
+- initialization list - hmm
+- any window and graphical interface (sdl, glfw...) - nauceno
+- vectors - wtf co to je
+- pairs and tuples
+- maps
+- lists and stacks
+- threads - tesim se dx
+- streams
+- templates
+- std::chrono - dafuq
+- value Categories
+- rule of five
+    - copy semantics
+    - move semantics
+- std::array, and other STL containers
+- libraries

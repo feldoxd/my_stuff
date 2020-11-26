@@ -43,7 +43,7 @@ public:
 	void deleno(wxCommandEvent& evt);
 	void enter(wxCommandEvent& evt);
 	void OnMenuExit(wxCommandEvent& evt);
-
+	void OnMenuCrash(wxCommandEvent& evt);
 
 	wxDECLARE_EVENT_TABLE();
 };

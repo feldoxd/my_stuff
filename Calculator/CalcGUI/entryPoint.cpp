@@ -4,12 +4,10 @@ wxIMPLEMENT_APP(entryPoint);
 
 entryPoint::entryPoint()
 {
-
 }
 
 entryPoint::~entryPoint()
 {
-
 }
 
 bool entryPoint::OnInit()

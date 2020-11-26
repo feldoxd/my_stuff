@@ -1,6 +1,7 @@
 #include "GUI.h"
 wxBEGIN_EVENT_TABLE(GUI, wxFrame)
 EVT_MENU(1001, GUI::OnMenuExit)
+EVT_MENU(1002, GUI::OnMenuCrash)
 EVT_BUTTON(1, GUI::num1)
 EVT_BUTTON(2, GUI::num2)
 EVT_BUTTON(3, GUI::num3)
@@ -24,6 +25,7 @@ int pointY = 80;
 
 double value1;
 double value2;
+std::string;
 
 
 GUI::GUI() : wxFrame(nullptr, wxID_ANY, "Calculator", wxPoint(80, 50), wxSize(300, 400))
@@ -50,6 +52,9 @@ GUI::GUI() : wxFrame(nullptr, wxID_ANY, "Calculator", wxPoint(80, 50), wxSize(30
 	//Add menu file operations
 	wxMenu *menuFile = new wxMenu();
 	menuFile->Append(1001, "Exit");
+#ifdef _DEBUG
+	menuFile->Append(1002, "Crash");
+#endif
 	//Add file menu to menu bar
 	m_MenuBar->Append(menuFile, "Options");
 }
@@ -77,6 +82,12 @@ GUI::~GUI()
 void GUI::OnMenuExit(wxCommandEvent& evt)
 {
 	Close();
+	evt.Skip();
+}
+
+void GUI::OnMenuCrash(wxCommandEvent& evt)
+{
+	throw std::runtime_error("Test crash");
 	evt.Skip();
 }
 
@@ -147,10 +158,20 @@ void GUI::krat(wxCommandEvent& evt)
 
 void GUI::deleno(wxCommandEvent& evt)
 {
+
 	evt.Skip();
 }
 
 void GUI::enter(wxCommandEvent& evt)
 {
+
 	evt.Skip();
+}
+
+int Calculation() {
+
+
+
+
+	return 0;
 }
