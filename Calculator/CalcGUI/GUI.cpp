@@ -1,5 +1,6 @@
 #include <stdexcept>
 #include <cstdint>
+#include <string>
 
 #include "GUI.h"
 wxBEGIN_EVENT_TABLE(GUI, wxFrame)
@@ -26,17 +27,6 @@ wxEND_EVENT_TABLE()
 int sizeY = 80;
 int sizeX = 30;
 int pointY = 80;
-
-double left;
-double right;
-std::string op;
-std::string textBox;
-double result;
-bool op_plus;
-bool op_minus;
-bool op_krat;
-bool op_deleno;	
-
 
 GUI::GUI() : wxFrame(nullptr, wxID_ANY, "Calculator", wxPoint(80, 50), wxSize(300, 400))
 {
@@ -155,65 +145,35 @@ void GUI::num0(wxCommandEvent& evt)
 
 void GUI::plus(wxCommandEvent& evt)
 {
-	op_plus = true;
 	evt.Skip();
 }
 
 void GUI::minus(wxCommandEvent& evt)
 {
-	op_minus = true;
 	evt.Skip();
 }
 
 void GUI::krat(wxCommandEvent& evt)
 {
-	op_krat = true;
 	evt.Skip();
 }
 
 void GUI::deleno(wxCommandEvent& evt)
 {
-	op_deleno = true;
 	evt.Skip();
 }
 
 void GUI::enter(wxCommandEvent& evt)
 {
-	Calculation();
 	evt.Skip();
 }
 
 void GUI::clear(wxCommandEvent& evt)
 {
-	textBox = "";
+	//textBox = "";
 	UpdateDisplay();
 	evt.Skip();
 }
 
-int Calculation() {
-	if (op_plus) {
-		result = left + right;
-	}
-	else
-	if (op_minus) {
-		result = left - right;
-	}
-	else
-	if (op_krat) {
-		result = left * right;
-	}
-		else
-	if (op_deleno) {
-		result = left / right;
-	}
-	else
-	result = 0;
-
-}
-
-void UpdateDisplay(wxCommandEvent& evt) {
-	textBox = result;
-	m_list0->AppendString(PtextBox->GetValue());
-
-	evt.Skip();
+void UpdateDisplay() {
 }
