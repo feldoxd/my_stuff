@@ -1,13 +1,13 @@
 #pragma once
 #include "wx/wx.h"
 
-
 class GUI : public wxFrame
 {
 public:
 	GUI();
 	~GUI();
 public:
+	wxButton* m_clear = nullptr;
 	wxButton* m_enter = nullptr;
 	wxButton* m_btnplus = nullptr;
 	wxButton* m_btnminus = nullptr;
@@ -42,8 +42,10 @@ public:
 	void krat(wxCommandEvent& evt);
 	void deleno(wxCommandEvent& evt);
 	void enter(wxCommandEvent& evt);
+	void clear(wxCommandEvent& evt);
 	void OnMenuExit(wxCommandEvent& evt);
 	void OnMenuCrash(wxCommandEvent& evt);
+	
 
 	wxDECLARE_EVENT_TABLE();
 };

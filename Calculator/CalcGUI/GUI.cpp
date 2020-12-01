@@ -1,3 +1,6 @@
+#include <stdexcept>
+#include <cstdint>
+
 #include "GUI.h"
 wxBEGIN_EVENT_TABLE(GUI, wxFrame)
 EVT_MENU(1001, GUI::OnMenuExit)
@@ -17,19 +20,27 @@ EVT_BUTTON(12, GUI::minus)
 EVT_BUTTON(13, GUI::krat)
 EVT_BUTTON(14, GUI::deleno)
 EVT_BUTTON(15, GUI::enter)
+EVT_BUTTON(16, GUI::clear)
 wxEND_EVENT_TABLE()
 
 int sizeY = 80;
 int sizeX = 30;
 int pointY = 80;
 
-double value1;
-double value2;
-std::string;
+double left;
+double right;
+std::string op;
+std::string textBox;
+double result;
+bool op_plus;
+bool op_minus;
+bool op_krat;
+bool op_deleno;	
 
 
 GUI::GUI() : wxFrame(nullptr, wxID_ANY, "Calculator", wxPoint(80, 50), wxSize(300, 400))
 {
+	m_clear = new wxButton(this, 16, "C", wxPoint(240, pointY + 200), wxSize(40, 30));
 	m_enter = new wxButton(this, 15, "Enter:", wxPoint(170, pointY + 200), wxSize(70, 30));
 	m_btnplus = new wxButton(this, 11, "+", wxPoint(10, pointY + 200), wxSize(40, 30));
 	m_btnminus = new wxButton(this, 12, "-", wxPoint(50, pointY + 200), wxSize(40, 30));
@@ -87,6 +98,7 @@ void GUI::OnMenuExit(wxCommandEvent& evt)
 
 void GUI::OnMenuCrash(wxCommandEvent& evt)
 {
+	wxMessageBox("long pp");
 	throw std::runtime_error("Test crash");
 	evt.Skip();
 }
@@ -143,35 +155,65 @@ void GUI::num0(wxCommandEvent& evt)
 
 void GUI::plus(wxCommandEvent& evt)
 {
+	op_plus = true;
 	evt.Skip();
 }
 
 void GUI::minus(wxCommandEvent& evt)
 {
+	op_minus = true;
 	evt.Skip();
 }
 
 void GUI::krat(wxCommandEvent& evt)
 {
+	op_krat = true;
 	evt.Skip();
 }
 
 void GUI::deleno(wxCommandEvent& evt)
 {
-
+	op_deleno = true;
 	evt.Skip();
 }
 
 void GUI::enter(wxCommandEvent& evt)
 {
+	Calculation();
+	evt.Skip();
+}
 
+void GUI::clear(wxCommandEvent& evt)
+{
+	textBox = "";
+	UpdateDisplay();
 	evt.Skip();
 }
 
 int Calculation() {
+	if (op_plus) {
+		result = left + right;
+	}
+	else
+	if (op_minus) {
+		result = left - right;
+	}
+	else
+	if (op_krat) {
+		result = left * right;
+	}
+		else
+	if (op_deleno) {
+		result = left / right;
+	}
+	else
+	result = 0;
 
+}
 
+void UpdateDisplay(wxCommandEvent& evt) {
+	textBox = result;
+	m_list0->AppendString(PtextBox->GetValue());
 
-
-	return 0;
+	evt.Skip();
 }
