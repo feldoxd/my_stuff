@@ -46,6 +46,5 @@ public:
 	void OnMenuExit(wxCommandEvent& evt);
 	void OnMenuCrash(wxCommandEvent& evt);
 	
-
 	wxDECLARE_EVENT_TABLE();
 };

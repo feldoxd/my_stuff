@@ -3,6 +3,16 @@
 #include <string>
 
 #include "GUI.h"
+
+std::string m_preDecimal;
+std::string m_postDecimal;
+bool m_decimal;
+bool m_positive;
+double m_total;
+double m_last;
+int m_op;
+bool m_entryMode;
+
 wxBEGIN_EVENT_TABLE(GUI, wxFrame)
 EVT_MENU(1001, GUI::OnMenuExit)
 EVT_MENU(1002, GUI::OnMenuCrash)
@@ -170,10 +180,19 @@ void GUI::enter(wxCommandEvent& evt)
 
 void GUI::clear(wxCommandEvent& evt)
 {
-	//textBox = "";
-	UpdateDisplay();
 	evt.Skip();
 }
 
 void UpdateDisplay() {
+	std::string numStr("");
+	if (!m_positive) {
+		numStr += "-";
+	}
+
+	numStr += m_preDecimal;
+	if (m_decimal) {
+		numStr += "." + m_postDecimal;
+	}
+
+	m_list0->SetValue(numStr);
 }
