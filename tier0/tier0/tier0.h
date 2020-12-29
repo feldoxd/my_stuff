@@ -9,3 +9,5 @@
 extern "C" TIER0_API int Pause();
 
 extern "C" TIER0_API int Void();
+
+TIER0_API void cls();

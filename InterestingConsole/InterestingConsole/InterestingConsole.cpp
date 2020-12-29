@@ -1,11 +1,17 @@
-// InterestingConsole.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+
 
 #include <iostream>
+
 #include "CMDMain.h"
 
 int main()
 {
-    initiateCommands();
+	std::cout << "Console version 1.0.0.0 build 9\n";
+	while (1) {
+	std::cout << "(>";
+	std::cin >> command;
+	}
 
+
+return 0;
 }

@@ -1,40 +1,28 @@
 #include "pch.h"
 #include "CMDMain.h"
 
+
+#include <stdio.h>
 #include <iostream>
+#include "cls.h"
 
-std::string CMDS = "list, version, exit";
-std::string Sversion = "1.0.0.0";
-
-bool initiateCommands() {
-	std::cout << "Initiating commands:" << "\n";
-	Sleep(3000);
-	std::cout << "Basic commands:" << "\n";
+int cmdcount = 0;
+/*bool initiateCommands(){
+		
+	std::cout << "Command count: " << cmdcount << "\n";
+	exit();
+	cls();
+	std::cout << "Command count: " << cmdcount << "\n";
 	list();
-	version();
+	cls();
+	std::cout << "Command count: " << cmdcount << "\n";
 	return false;
+}*/
+
+void exit(){
+	system("exit");
 }
 
-bool list() {
-	if (list) {
-	std::cout << "list" << "\n";
-		return false;
-	}
-	else {
-	std::cout << "List of commands:" << "\n";
-	std::cout << CMDS;
-
-	return false;
-	}
-}
-
-bool version() {
-	if (version) {
-		std::cout << "version" << "\n";
-		return false;
-	}
-	else {
-		std::cout << Sversion << "\n";
-		return false;
-	}
+void list(){
+	std::cout << "k";
 }

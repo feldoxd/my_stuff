@@ -1,14 +1,23 @@
 #pragma once
 
-#ifdef CMDMain_EXPORTS
-#define CMDMain_API __declspec(dllexport)
-#else
-#define CMDMain_API __declspec(dllimport)
-#endif
+#include <iostream>
+#include <stdio.h>
+
+#define CMDMain_APIExport __declspec(dllexport)
+#define CMDMain_APIImport __declspec(dllimport)
 
 
-extern "C++" CMDMain_API bool initiateCommands();
+//CMDMain_APIExport bool initiateCommands();
 
-extern "C++" CMDMain_API bool list();
+CMDMain_APIExport void exit();
 
-extern "C++" CMDMain_API bool version();
+CMDMain_APIExport void list();
+
+std::string command;
+
+switch(command){
+	case 'help':
+		break;
+	default:
+		break;
+}
