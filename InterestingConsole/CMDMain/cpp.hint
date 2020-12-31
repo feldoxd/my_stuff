@@ -1,0 +1,1 @@
+#define CMDMain_APIExport __declspec(dllexport)

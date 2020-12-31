@@ -1,23 +1,19 @@
 #pragma once
 
 #include <iostream>
-#include <stdio.h>
+
+bool points = false;
 
 #define CMDMain_APIExport __declspec(dllexport)
 #define CMDMain_APIImport __declspec(dllimport)
 
-
-//CMDMain_APIExport bool initiateCommands();
-
-CMDMain_APIExport void exit();
-
-CMDMain_APIExport void list();
+const char* debugcmds[2] = { "pointers", "break" };
+const char* cmds[4] = { "help", "list", "exit", "version" };
 
 std::string command;
+std::string version = "0.0.0.2";
 
-switch(command){
-	case 'help':
-		break;
-	default:
-		break;
-}
+CMDMain_APIExport int CMDConvert(std::string command);
+
+
+
