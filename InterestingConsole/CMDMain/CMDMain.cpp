@@ -1,15 +1,12 @@
 #include "pch.h"
 #include "CMDMain.h"
 
-
 #include <stdio.h>
 #include <iostream>
 #include "cls.h"
-
-int exit(){
-	system("exit");
-	return 1;
-}
+#ifdef _DEBUG
+#include <csignal>
+#endif
 
 void list(){
 	for (int i = 0; 4 > i; i++) {
@@ -17,9 +14,9 @@ void list(){
 	}
 }
 
-//const char* cmds[4] = { "help", "list", "exit", "version" };
 //kapis to? nevim jak spatny tento kod je ale urcite neni nejlepsi
-
+//je to samy if statement.
+//tak trapny. nevim jestli tu je este neco jinyho nebo jinak jak to muzu udelat
 int CMDConvert(std::string command) {
 #ifdef _DEBUG
 	if (points) {
@@ -30,7 +27,7 @@ int CMDConvert(std::string command) {
 	int k = 0;
 	while (1) {
 		if (command == cmds[0]) {
-			std::cout << "kastan\n";
+			//std::cout << "kastan\n";
 			return 0;
 		}
 		if (command == cmds[1]) {
@@ -39,7 +36,7 @@ int CMDConvert(std::string command) {
 		}
 		if (command == cmds[2]) {
 			system("exit");
-			return 0;
+			return 1;
 		}
 		if (command == cmds[3]) {
 			std::cout << version << "\n";
@@ -58,7 +55,24 @@ int CMDConvert(std::string command) {
 				points = false;
 			}
 		}
-#endif
+		if (command == debugcmds[1]) {
+			std::raise(SIGABRT);
+			return 1;
+		}
+		if (command == debugcmds[2]) {
+			if (!useSystemResources) {
+				std::cout << "Enabled system resources (warning slow)\n";
+				useSystemResources = true;
+				return 0;
+			}
+			else
+			{
+				std::cout << "Disabled system resources(some functions may be broken)\n";
+				useSystemResources = false;
+				return 0;
+			}
+		}
+#endif //_debug
 		while (1) {
 			if (cmds[k] || debugcmds[k] != command) {
 				std::cout << "NEZNAMY KOMANK DXDDDDDDDDDDDDD\n";
@@ -67,4 +81,5 @@ int CMDConvert(std::string command) {
 			}
 		}
 	}
+	return 1;
 }
