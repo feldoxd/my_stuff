@@ -184,15 +184,4 @@ void GUI::clear(wxCommandEvent& evt)
 }
 
 void UpdateDisplay() {
-	std::string numStr("");
-	if (!m_positive) {
-		numStr += "-";
-	}
-
-	numStr += m_preDecimal;
-	if (m_decimal) {
-		numStr += "." + m_postDecimal;
-	}
-
-	m_list0->SetValue(numStr);
 }

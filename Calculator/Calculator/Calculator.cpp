@@ -1,6 +1,5 @@
-//version 1.5
+//version 1.8
 #include "tier0.h"
-
 #include <iostream>
 #include <windows.h>
 #include <conio.h>
@@ -8,17 +7,18 @@
 #include <math.h>
 
 double num1, num2;
+char op;
 
-void calcGui() {
-
+void reset() {
+    num1.clear();
 }
 
-void calcNogui() {
+void calc() {
     SetConsoleTitle(_T("Simple calculator"));
-    char op;
+    while (1) {
     std::cout << "Enter numbers: ";
     std::cin >> num1 >> num2;
-    std::cout << "Your entered numbers : " << num1 << " and " << num2 << "\n";
+    std::cout << "Your entered numbers are : " << num1 << " and " << num2 << "\n";
     std::cout << "Enter operator: +, -, * or /: \n";
     std::cin >> op;
     switch (op)
@@ -43,20 +43,13 @@ void calcNogui() {
         std::cout << "Error! operator is not correct" << "\n";
         break;
     }
-    Pause();
+    Pause("jsi kokot ne");
+    }
 }
 
 int main()
 {
-    bool guiEnable = false;
-
-    if (guiEnable){
-        calcGui();
-    }
-    else
-    {
-        calcNogui();
-    }
-    return 0;
+        calc();
+        return 0;
 }
 
